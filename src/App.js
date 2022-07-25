@@ -1,13 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import { VStack, Flex, Heading, Spacer, Text } from '@chakra-ui/layout';
+import { VStack, Flex, Heading, Spacer } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/react';
 import { IconButton } from '@chakra-ui/button';
 import { FaSun, FaMoon, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'
 import { useColorMode } from "@chakra-ui/color-mode";
 import Header from "./components/Header";
-import Social from "./components/Social";
-import Profile from "./components/Profile";
 import { Link } from "react-router-dom";
 
 function App() {
@@ -17,7 +14,7 @@ function App() {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
   return (
-	  <div className="App">
+	  <div className="Home">
       <VStack p={5} w="100%">
 
         <Flex w="100%">
@@ -34,10 +31,22 @@ function App() {
           <IconButton ml={8} icon={isDark ? <FaSun /> : <FaMoon/>} isRound="true" onClick={toggleColorMode}></IconButton>
         </Flex>
         <Header />
-				<Button m={30} colorScheme='blue' size='lg' variant='ghost'> <Heading m={40} > Projects </Heading> </Button>
-				<Button m={30} colorScheme='blue' size='lg' variant='ghost'> <Heading m={40}> <a href="https://github.com/Funinja/Current-NeoVim"> NeoVim Setup </a> </Heading> </Button>
-				<Button m={30} colorScheme='blue' size='lg' variant='ghost'> <Heading m={40} > Other </Heading> </Button>
-      </VStack>
+				<VStack m={30} w="500px">
+					<Button w="100%"  colorScheme='blue' size='lg' variant='ghost'> 
+						<Link to="/Projects">
+						<Heading > Projects </Heading> 
+						</Link>
+					</Button>
+					<Button w="100%" colorScheme='blue' size='lg' variant='ghost'> 
+						<Heading> 
+							<a href="https://github.com/Funinja/Current-NeoVim"> Neovim Setup </a>
+						</Heading> 
+					</Button>
+					<Button w="100%" colorScheme='blue' size='lg' variant='ghost'> 
+						<Heading> <a href="mailto:denwt.lam@outlook.com"> Contact Me </a></Heading> 	
+					</Button>
+				</VStack>  
+		</VStack>
     </div>
   );
 }

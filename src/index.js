@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider, ColorModeProvider, ColorModeScript } from '@chakra-ui/react';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Projects from "./pages/Projects.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,7 +13,10 @@ root.render(
     <ChakraProvider>
       <ColorModeScript initialColorMode='light'></ColorModeScript>
 			<BrowserRouter>
-				<App />
+				<Routes>
+					<Route exact path="/" element={<App />}/>
+					<Route exact path="/Projects" element={<Projects />}/>
+				</Routes>
 			</BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>

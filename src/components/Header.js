@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Circle, Box, Flex, Text } from '@chakra-ui/layout';
+import { Stack, Box, Flex, Text } from '@chakra-ui/layout';
 import { Image } from '@chakra-ui/react';
 import { useColorMode } from '@chakra-ui/color-mode';
 import { useMediaQuery } from '@chakra-ui/media-query';
